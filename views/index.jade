@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title Prime number
+  body
+    form(method="post")
+      label(for="number") Input number
+      input(type="text" name="number" id="number" placeholder="Input number")
+      input(type="submit")
+    h1 The first #{number} prime number(s) are:
+    if primes
+      each prime in primes
+        p= prime
