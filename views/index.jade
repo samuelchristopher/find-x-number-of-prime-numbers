@@ -2,12 +2,19 @@ doctype html
 html
   head
     title Prime number
+    link(href="bootstrap/dist/css/bootstrap.css" rel="stylesheet")
   body
-    form(method="post")
-      label(for="number") Input number
-      input(type="text" name="number" id="number" placeholder="Input number")
-      input(type="submit")
-    h1 The first #{number} prime number(s) are:
-    if primes
-      each prime in primes
-        p= prime
+    .container
+      h1 Prime number
+      form(method="post")
+        .form-group
+          label(for="number") Input number
+          input.form-control(type="text" name="number" id="number" placeholder="Input number")
+          br
+          button.btn.btn-primary(type="submit") Submit
+      if number
+        h1 The first #{number} prime number(s) are:
+      if primes
+        ul.list-group
+          each prime in primes
+            li.list-group-item= prime

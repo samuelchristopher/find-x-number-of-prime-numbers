@@ -1,10 +1,12 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var path = require('path');
 var app = express();
 
 app.set('view engine', 'jade');
 
 app.use(bodyParser());
+app.use(express.static(path.join(__dirname, 'bower_components')));
 
 app.get('/', function(req, res) {
   res.render('index');
@@ -24,7 +26,7 @@ app.listen(port);
 
 
 
-
+// Prime module
 var prime = (function() {
   var primes = new Array();
 
